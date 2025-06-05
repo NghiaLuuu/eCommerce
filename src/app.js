@@ -1,3 +1,5 @@
+'use strict'
+
 const express = require("express");
 const morgan = require("morgan");
 const helmet = require("helmet");
@@ -14,6 +16,7 @@ app.use(compression());
 require("./dbs/init.mongodb");
 const {checkOverLoad} = require("./helpers/check.connect");
 checkOverLoad();
+
 //init routes
 app.get('/', (req, res, next) => {
     const strCompress = "Hello";
